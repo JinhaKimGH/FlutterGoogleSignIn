@@ -1,0 +1,29 @@
+Target dependency graph (11 targets)
+AppAuth in Pods, no dependencies
+FlutterMacOS in Pods, no dependencies
+GTMSessionFetcher-GTMSessionFetcher_Core_Privacy in Pods, no dependencies
+GTMSessionFetcher in Pods, depends on:
+GTMSessionFetcher-GTMSessionFetcher_Core_Privacy in Pods (explicit)
+GTMAppAuth in Pods, depends on:
+AppAuth in Pods (explicit)
+GTMSessionFetcher in Pods (explicit)
+GoogleSignIn-GoogleSignIn in Pods, no dependencies
+GoogleSignIn in Pods, depends on:
+AppAuth in Pods (explicit)
+GTMAppAuth in Pods (explicit)
+GTMSessionFetcher in Pods (explicit)
+GoogleSignIn-GoogleSignIn in Pods (explicit)
+google_sign_in_ios-google_sign_in_ios_privacy in Pods, no dependencies
+google_sign_in_ios in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+GoogleSignIn in Pods (explicit)
+google_sign_in_ios-google_sign_in_ios_privacy in Pods (explicit)
+Pods-Runner in Pods, depends on:
+AppAuth in Pods (explicit)
+FlutterMacOS in Pods (explicit)
+GTMAppAuth in Pods (explicit)
+GTMSessionFetcher in Pods (explicit)
+GoogleSignIn in Pods (explicit)
+google_sign_in_ios in Pods (explicit)
+Pods-RunnerTests in Pods, depends on:
+Pods-Runner in Pods (explicit)

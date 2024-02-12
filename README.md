@@ -1,3 +1,3 @@
-# poc
+# Proof of Concept Google Sign In
 
-A new Flutter project.
+Google Sign In with flutter.

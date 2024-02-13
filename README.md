@@ -1,4 +1,4 @@
-# Emerald Bank: Google Sign In
+# Apache Bank: Google Sign In
 
 A proof of concept Google Sign In application with Flutter. Uses the Google People API and google_sign_in package.
 

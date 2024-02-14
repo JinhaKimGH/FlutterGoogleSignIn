@@ -28,6 +28,33 @@ Go to the project directory
   cp pubspec.yaml ../<app-directory>
 ```
 
+Paste this code to the end of the dict in ios/Runner/Info.plist:
+
+```bash
+    <key>GIDClientID</key>
+	<string>5734846377-mqe2g025h90tati7aegl852pvp4pns1k.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.5734846377-mqe2g025h90tati7aegl852pvp4pns1k</string>
+			</array>
+		</dict>
+	</array>
+```
+
+Paste this code to the end of the dict in macos/Runner/Info.plist:
+
+```bash
+    <key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.google.GIDSignIn</string>
+	</array>
+```
+
 After installing Flutter and the different iOS and android simulators. Start the device with VSCode in the bottom right of the IDE. After the device has started, run this command in the terminal:
 
 ```bash

@@ -32,7 +32,7 @@ Paste this code to the end of the dict in ios/Runner/Info.plist:
 
 ```bash
     <key>GIDClientID</key>
-	<string>5734846377-mqe2g025h90tati7aegl852pvp4pns1k.apps.googleusercontent.com</string>
+	<string>5734846377-hrrdcs8a9urqs015ca81gheduh6d2lnv.apps.googleusercontent.com</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -40,7 +40,7 @@ Paste this code to the end of the dict in ios/Runner/Info.plist:
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.5734846377-mqe2g025h90tati7aegl852pvp4pns1k</string>
+				<string>com.googleusercontent.apps.5734846377-hrrdcs8a9urqs015ca81gheduh6d2lnv</string>
 			</array>
 		</dict>
 	</array>

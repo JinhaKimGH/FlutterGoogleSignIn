@@ -23,7 +23,7 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
 );
 
 class GoogleSignInComponent extends StatefulWidget {
-  const GoogleSignInComponent({super.key});
+  GoogleSignInComponent({super.key});
 
   @override
   State createState() => _GoogleSignInComponentState();
@@ -33,6 +33,13 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
   GoogleSignInAccount? _currentUser;
   bool _isAuthorized = false;
   String _contactText = '';
+
+  @override
+  void setState(fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
 
   @override
   void initState() {
@@ -112,7 +119,9 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
     }
   }
 
-  Future<void> _handleSignOut() => _googleSignIn.disconnect();
+  Future<void> _signOut() {
+    return _googleSignIn.disconnect();
+  }
 
   Widget _buildBody() {
     final GoogleSignInAccount? user = _currentUser;
@@ -144,7 +153,7 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
             ),
           ],
           ElevatedButton(
-            onPressed: _handleSignOut,
+            onPressed: _signOut,
             child: const Text("SIGN OUT"),
           ),
         ],

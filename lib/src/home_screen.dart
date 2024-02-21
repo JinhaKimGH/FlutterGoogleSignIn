@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:poc/router.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,25 +10,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF005DAA),
-        surfaceTintColor: const Color(0xFF000000),
-        elevation: 10.0,
-        titleTextStyle: const TextStyle(color: Color(0xFFFFFFFF)),
-        title: Row(
-          children: [
-            SvgPicture.network(
-                'https://www1.royalbank.com/uos/3m/images/toptools_beyondbanking.svg',
-                semanticsLabel: 'A shark?!',
-                placeholderBuilder: (BuildContext context) => Container(
-                      padding: const EdgeInsets.all(30.0),
-                      child: const CircularProgressIndicator(),
-                    )),
-            const Padding(
-              padding: EdgeInsets.all(40),
-            ),
-            const Text('Proof of Concept App'),
-          ],
+        centerTitle: true,
+        backgroundColor: const Color(0xFFFFFFFF),
+        surfaceTintColor: const Color(0xFFFFFFFF),
+        shadowColor: Colors.black,
+        elevation: 5.0,
+        title: const Text(
+          'Home Page',
+          style: TextStyle(color: Color(0xFF005DAA)),
         ),
+        leading: SvgPicture.network(
+            'https://www1.royalbank.com/uos/3m/images/toptools_beyondbanking.svg',
+            semanticsLabel: 'Beyond Banking Logo',
+            fit: BoxFit.scaleDown,
+            placeholderBuilder: (BuildContext context) => Container(
+                  child: const CircularProgressIndicator(),
+                )),
       ),
       body: ConstrainedBox(
         constraints: const BoxConstraints.expand(),
@@ -44,22 +43,17 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in/google');
+                      context.go(Routes.google);
                     },
                     child: const Text("Google")),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in/google');
-                    },
-                    child: const Text("Apple")),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in/google');
+                      context.go(Routes.passkeySignIn);
                     },
                     child: const Text("Passkey")),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in/google');
+                      context.go(Routes.google);
                     },
                     child: const Text("RBC")),
               ],

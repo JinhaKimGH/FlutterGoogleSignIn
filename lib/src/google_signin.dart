@@ -1,16 +1,11 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// ignore_for_file: avoid_print
-
 import 'dart:async';
 import 'dart:convert' show json;
-
+import 'package:go_router/go_router.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
+import 'package:poc/router.dart';
 import 'sign_in_button.dart';
 
 const List<String> scopes = <String>[
@@ -123,7 +118,7 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
     return _googleSignIn.disconnect();
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     final GoogleSignInAccount? user = _currentUser;
 
     if (user != null) {
@@ -164,6 +159,9 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
         children: <Widget>[
           const Text('You are not currently signed in.'),
           buildSignInButton(onPressed: _handleSignIn),
+          ElevatedButton(
+              onPressed: () => {context.go(Routes.signIn)},
+              child: const Text('Back')),
         ],
       );
     }
@@ -177,7 +175,7 @@ class _GoogleSignInComponentState extends State<GoogleSignInComponent> {
         ),
         body: ConstrainedBox(
           constraints: const BoxConstraints.expand(),
-          child: _buildBody(),
+          child: _buildBody(context),
         ));
   }
 }
